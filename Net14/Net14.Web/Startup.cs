@@ -39,7 +39,7 @@ namespace Net14.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebMaze14;Integrated Security=True;";
+            var connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Social;Integrated Security=True;";
             services.AddDbContext<WebContext>(x => x.UseSqlServer(connectString));
 
             services.AddAuthentication(AuthName)
@@ -386,7 +386,7 @@ namespace Net14.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Social}/{action=Index}/{id?}");
             });
         }
     }
